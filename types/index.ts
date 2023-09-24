@@ -58,3 +58,9 @@ export interface ShowMoreProps {
     pageNumber: number; 
     isNext: boolean; 
 }
+
+export interface CarCatalogueProps {
+    isDataEmpty: boolean; 
+    allCars: CarProps[]; 
+    limit: number; 
+}

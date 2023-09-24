@@ -1,6 +1,6 @@
 import { CarProps, FilterProps } from "@/types";
 
-export async function fetchCars(filters: FilterProps) {
+export async function fetchCars(filters: FilterProps): Promise<CarProps[]> {
     const {manufacturer, year, model, limit, fuel} = filters; 
     const headers = {
         'X-RapidAPI-Key': '4922799e83msh9e932645723e670p181ecfjsn76f3d5c46f03',
@@ -10,7 +10,7 @@ export async function fetchCars(filters: FilterProps) {
         headers: headers,
     });
 
-    const result = await response.json(); 
+    const result: CarProps[] = await response.json(); 
     return result; 
 }
 
